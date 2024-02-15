@@ -1,0 +1,17 @@
+from arcgis.gis import GIS
+from arcgis.geocoding import geocode
+
+gis = GIS()
+
+webmap_search = gis.content.search(
+    query="Whitman College Tree Map 2023 owner:jensenjv",
+    item_type="Web Map"
+ )
+webmap_search
+
+webmap_item = webmap_search[0]
+webmap_item
+
+from arcgis.mapping import WebMap
+whitman_trees = WebMap(webmap_item)
+whitman_trees
